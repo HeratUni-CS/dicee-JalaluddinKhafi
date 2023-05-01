@@ -7,7 +7,7 @@ void main() {
         backgroundColor: Colors.blueGrey,
         appBar: AppBar(
           backgroundColor: Colors.black12,
-          title:  Text('Dice'),
+          title: Text('Dice'),
         ),
         body: MyApp(),
       ),
@@ -19,10 +19,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: <Widget> [
-        Image(
-            width: 200.0,
-            image: AssetImage('images/dice1.png'))
+      children: <Widget>[
+        Expanded(
+          child: Image(
+            image: AssetImage('images/dice1.png'),
+          ),
+        ),
+        Expanded(
+          child: Image(
+            image: AssetImage('images/dice1.png'),
+          ),
+        ),
       ],
     );
   }
