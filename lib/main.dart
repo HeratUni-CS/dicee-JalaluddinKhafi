@@ -22,19 +22,22 @@ class MyApp extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Expanded(
-            child:Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.asset('images/dice1.png'),
-            )
+            child:FloatingActionButton(onPressed: () { 
+              print('left button clecked');
+            },
+            child: Image.asset('images/dice1.png'),
+            ),
           ),
           Expanded(
-              child:Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.asset('images/dice1.png'),
-              )
+              child: FloatingActionButton(onPressed: () { 
+                print('Right button clecked');
+              },
+              child: Image.asset('images/dice1.png'),
+              ),
           ),
         ],
       ),
     );
   }
 }
+
