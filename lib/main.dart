@@ -22,9 +22,9 @@ class dicePage extends StatefulWidget {
 }
 
 class _dicePageState extends State<dicePage> {
+  var diceNumber=1;
   @override
   Widget build(BuildContext context) {
-    var diceNumber=1;
     return Center(
       child: Row(
         children: <Widget>[
