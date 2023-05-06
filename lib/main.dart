@@ -4,40 +4,48 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.red,
         appBar: AppBar(
-          backgroundColor: Colors.black12,
+          backgroundColor: Colors.red,
           title: Text('Dice'),
         ),
-        body: MyApp(),
+        body: dicePage(),
       ),
     ),
   );
 }
+class dicePage extends StatefulWidget {
+  const dicePage({Key? key}) : super(key: key);
 
-class MyApp extends StatelessWidget {
+  @override
+  State<dicePage> createState() => _dicePageState();
+}
+
+class _dicePageState extends State<dicePage> {
   @override
   Widget build(BuildContext context) {
+    var diceNumber=1;
     return Center(
       child: Row(
         children: <Widget>[
           Expanded(
-            child:FloatingActionButton(onPressed: () { 
-              print('left button clecked');
-            },
-            child: Image.asset('images/dice1.png'),
+            child: TextButton(
+              onPressed: () {
+                print('left button clecked');
+              },
+              child: Image.asset('images/dice$diceNumber.png'),
             ),
           ),
           Expanded(
-              child: FloatingActionButton(onPressed: () { 
+            child: TextButton(
+              onPressed: () {
                 print('Right button clecked');
               },
-              child: Image.asset('images/dice1.png'),
-              ),
+              child: Image.asset('images/dice$diceNumber.png'),
+            ),
           ),
         ],
       ),
     );
   }
 }
-
