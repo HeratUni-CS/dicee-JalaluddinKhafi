@@ -15,6 +15,7 @@ void main() {
     ),
   );
 }
+
 class dicePage extends StatefulWidget {
   const dicePage({Key? key}) : super(key: key);
 
@@ -23,7 +24,8 @@ class dicePage extends StatefulWidget {
 }
 
 class _dicePageState extends State<dicePage> {
-  var diceNumber=1;
+  var leftDiceNumber = 1;
+  var rightDiceNumber = 1;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -33,20 +35,22 @@ class _dicePageState extends State<dicePage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  diceNumber=Random().nextInt(6)+1;
+                  leftDiceNumber = Random().nextInt(6) + 1;
+                  rightDiceNumber = Random().nextInt(6) + 1;
                 });
               },
-              child: Image.asset('images/dice$diceNumber.png'),
+              child: Image.asset('images/dice$leftDiceNumber.png'),
             ),
           ),
           Expanded(
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  diceNumber=Random().nextInt(6)+1;
+                  leftDiceNumber = Random().nextInt(6) + 1;
+                  rightDiceNumber = Random().nextInt(6) + 1;
                 });
               },
-              child: Image.asset('images/dice$diceNumber.png'),
+              child: Image.asset('images/dice$rightDiceNumber.png'),
             ),
           ),
         ],
